@@ -1,76 +1,92 @@
 "use client"
 
-import { Calendar, Clock, ArrowRight } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { useState, useEffect } from "react"
 import Link from "next/link"
+import { Button } from "@/components/ui/button"
+import { Calendar, Clock, ArrowRight } from "lucide-react"
+
+// Client-side only date formatter to prevent hydration mismatches
+function ClientDateFormatter({ date }: { date: string }) {
+  const [formattedDate, setFormattedDate] = useState<string>("")
+
+  useEffect(() => {
+    setFormattedDate(new Date(date).toLocaleDateString())
+  }, [date])
+
+  return <span>{formattedDate}</span>
+}
 
 export function BlogPostsSection() {
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  const categories = ["All", "Development", "AI", "Productivity", "Tutorials", "News"]
+
   const posts = [
     {
-      title: "The Future of AI-Powered Development",
-      excerpt:
-        "Exploring how artificial intelligence is transforming the way we build software and what it means for developers.",
-      author: "Alex Chen",
+      title: "Building AI-Powered Applications with TechFlow",
+      excerpt: "Learn how to leverage our AI platform to build intelligent applications that adapt to user needs and scale automatically.",
+      author: "Sarah Chen",
       date: "2024-01-15",
-      readTime: "5 min read",
-      category: "AI Development",
-      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=200&fit=crop",
-      featured: true,
-    },
-    {
-      title: "Building Scalable Applications with TechFlow",
-      excerpt:
-        "A comprehensive guide to architecting and deploying scalable applications using our AI-powered platform.",
-      author: "Sarah Rodriguez",
-      date: "2024-01-12",
       readTime: "8 min read",
-      category: "Tutorial",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=200&fit=crop",
-      featured: false,
+      category: "AI",
+      featured: true,
+      image: "/placeholder.jpg",
     },
     {
-      title: "Best Practices for AI Code Generation",
-      excerpt: "Learn how to write effective prompts and get the most out of AI-generated code in your projects.",
-      author: "Marcus Johnson",
-      date: "2024-01-10",
+      title: "The Future of Software Development",
+      excerpt: "Explore how AI is transforming the way we write, test, and deploy code in modern development workflows.",
+      author: "Michael Rodriguez",
+      date: "2024-01-12",
       readTime: "6 min read",
-      category: "Best Practices",
-      image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=400&h=200&fit=crop",
+      category: "Development",
       featured: false,
+      image: "/placeholder.jpg",
     },
     {
-      title: "Case Study: Reducing Development Time by 70%",
-      excerpt: "How StartupCo used TechFlow to accelerate their product development and reach market faster.",
+      title: "10 Productivity Tips for Developers",
+      excerpt: "Discover proven techniques to boost your coding productivity and ship features faster than ever before.",
       author: "Emily Watson",
+      date: "2024-01-10",
+      readTime: "5 min read",
+      category: "Productivity",
+      featured: false,
+      image: "/placeholder.jpg",
+    },
+    {
+      title: "Getting Started with TechFlow API",
+      excerpt: "A comprehensive guide to integrating our powerful API into your existing applications and workflows.",
+      author: "David Kim",
       date: "2024-01-08",
-      readTime: "4 min read",
-      category: "Case Study",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=200&fit=crop",
+      readTime: "12 min read",
+      category: "Tutorials",
       featured: false,
+      image: "/placeholder.jpg",
     },
     {
-      title: "Security in AI-Generated Code",
-      excerpt: "Understanding security considerations and best practices when working with AI-generated code.",
-      author: "Alex Chen",
+      title: "Understanding AI Code Generation",
+      excerpt: "Deep dive into how our AI models understand context and generate high-quality, production-ready code.",
+      author: "Lisa Thompson",
       date: "2024-01-05",
-      readTime: "7 min read",
-      category: "Security",
-      image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=200&fit=crop",
+      readTime: "10 min read",
+      category: "AI",
       featured: false,
+      image: "/placeholder.jpg",
     },
     {
-      title: "Integrating TechFlow with Your CI/CD Pipeline",
-      excerpt: "Step-by-step guide to incorporating AI-powered development tools into your existing workflows.",
-      author: "Sarah Rodriguez",
+      title: "TechFlow Platform Updates - January 2024",
+      excerpt: "Stay up to date with the latest features, improvements, and bug fixes in our development platform.",
+      author: "TechFlow Team",
       date: "2024-01-03",
-      readTime: "9 min read",
-      category: "DevOps",
-      image: "https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?w=400&h=200&fit=crop",
+      readTime: "4 min read",
+      category: "News",
       featured: false,
+      image: "/placeholder.jpg",
     },
   ]
-
-  const categories = ["All", "AI Development", "Tutorial", "Best Practices", "Case Study", "Security", "DevOps"]
 
   return (
     <section className="py-12">
@@ -105,7 +121,7 @@ export function BlogPostsSection() {
                     <span>{post.author}</span>
                     <div className="flex items-center">
                       <Calendar className="h-4 w-4 mr-1" />
-                      {new Date(post.date).toLocaleDateString()}
+                      {mounted && <ClientDateFormatter date={post.date} />}
                     </div>
                     <div className="flex items-center">
                       <Clock className="h-4 w-4 mr-1" />
@@ -153,7 +169,7 @@ export function BlogPostsSection() {
                     <span>{post.author}</span>
                     <div className="flex items-center space-x-2">
                       <Calendar className="h-3 w-3" />
-                      <span>{new Date(post.date).toLocaleDateString()}</span>
+                      {mounted && <ClientDateFormatter date={post.date} />}
                     </div>
                   </div>
                 </div>
