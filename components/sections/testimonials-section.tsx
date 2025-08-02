@@ -7,7 +7,7 @@ export function TestimonialsSection() {
     {
       name: "Sarah Chen",
       role: "Senior Developer at Stripe",
-      avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=60&h=60&fit=crop&crop=face",
+      avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=120&h=120&fit=crop&crop=face&auto=format",
       content:
         "TechFlow has completely transformed how we build features. What used to take weeks now takes days. The AI code generation is incredibly accurate.",
       rating: 5,
@@ -15,7 +15,7 @@ export function TestimonialsSection() {
     {
       name: "Marcus Rodriguez",
       role: "CTO at StartupCo",
-      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=60&h=60&fit=crop&crop=face",
+      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=120&h=120&fit=crop&crop=face&auto=format",
       content:
         "The automated testing feature caught critical bugs that would have made it to production. TechFlow pays for itself in prevented incidents.",
       rating: 5,
@@ -23,7 +23,7 @@ export function TestimonialsSection() {
     {
       name: "Emily Watson",
       role: "Full Stack Developer",
-      avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=60&h=60&fit=crop&crop=face",
+      avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=120&h=120&fit=crop&crop=face&auto=format",
       content:
         "I can focus on solving business problems instead of writing boilerplate code. The AI understands context better than any tool I've used.",
       rating: 5,

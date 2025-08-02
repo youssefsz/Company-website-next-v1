@@ -34,7 +34,7 @@ export function BlogPostsSection() {
       readTime: "8 min read",
       category: "AI",
       featured: true,
-      image: "/placeholder.jpg",
+      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=400&fit=crop&auto=format",
     },
     {
       title: "The Future of Software Development",
@@ -44,7 +44,7 @@ export function BlogPostsSection() {
       readTime: "6 min read",
       category: "Development",
       featured: false,
-      image: "/placeholder.jpg",
+      image: "https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?w=800&h=400&fit=crop&auto=format",
     },
     {
       title: "10 Productivity Tips for Developers",
@@ -54,7 +54,7 @@ export function BlogPostsSection() {
       readTime: "5 min read",
       category: "Productivity",
       featured: false,
-      image: "/placeholder.jpg",
+      image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&auto=format",
     },
     {
       title: "Getting Started with TechFlow API",
@@ -64,7 +64,7 @@ export function BlogPostsSection() {
       readTime: "12 min read",
       category: "Tutorials",
       featured: false,
-      image: "/placeholder.jpg",
+      image: "https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?w=800&h=400&fit=crop&auto=format",
     },
     {
       title: "Understanding AI Code Generation",
@@ -74,7 +74,7 @@ export function BlogPostsSection() {
       readTime: "10 min read",
       category: "AI",
       featured: false,
-      image: "/placeholder.jpg",
+      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=400&fit=crop&auto=format",
     },
     {
       title: "TechFlow Platform Updates - January 2024",
@@ -84,7 +84,7 @@ export function BlogPostsSection() {
       readTime: "4 min read",
       category: "News",
       featured: false,
-      image: "/placeholder.jpg",
+      image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&h=400&fit=crop&auto=format",
     },
   ]
 
